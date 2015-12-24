@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.core.Response;
 
 @Path("/UserService")
 public class UserService {
@@ -33,7 +34,6 @@ public class UserService {
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces(MediaType.APPLICATION_JSON)
     public User findUserByIdAndPassword(final User user) {
-        System.out.println("*********** " + user.getUserId() + "**********" + user.getPassword());
         return userDao.findUserByIdAndPassword(user.getUserId(), user.getPassword());
     }
     
